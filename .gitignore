@@ -1,0 +1,23 @@
+/venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.vscode
+
+# dbt generated files and local configuration
+**/target/
+**/dbt_packages/
+**/dbt_modules/
+**/logs/
+**/profiles.yml
+**/.user.yml
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Operating system files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: retail_store
+    schema: raw
+    tables:
+      - name: products
+      - name: customers
+      - name: orders
+      - name: order_items
+      - name: employees
+      - name: stores
