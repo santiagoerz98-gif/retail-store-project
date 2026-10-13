@@ -1,36 +1,4 @@
 models:
-  - name: stg_orders
-    description: "Staging table for orders"
-    columns:
-      - name: order_id
-        description: "The unique identifier for an order"
-        data_tests:
-          - unique
-          - not_null
-      - name: customer_id
-        description: "The identifier for the customer who placed the order"
-      - name: order_date
-        description: "The date when the order was placed"
-      - name: status
-        description: "The status of the order"
-        data_tests:
-          accepted_values:
-            arguments:
-              values:
-                - "pending"
-                - "shipped"
-                - "delivered"
-                - "canceled"
-      - name: total_amount
-        description: "The total amount for the order"
-      - name: created_timestamp
-        description: "The timestamp when the order was created"
-      - name: updated_timestamp
-        description: "The timestamp when the order was last updated"
-      - name: is_active
-        description: "Indicates if the order is active"
-      - name: processed_at
-        description: "The timestamp when the record was processed"
   - name: stg_products
     description: "Staging table for products"
     columns:
@@ -153,5 +121,36 @@ models:
         description: "The timestamp when the store was last updated"
       - name: is_active
         description: "Indicates if the store is active"
+      - name: processed_at
+        description: "The timestamp when the record was processed"
+  - name: stg_orders
+    description: "Staging table for orders"
+    columns:
+      - name: order_id
+        description: "The unique identifier for an order"
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "The identifier for the customer who placed the order"
+      - name: order_date
+        description: "The date when the order was placed"
+      - name: status
+        description: "The status of the order"
+      - name: total_amount
+        description: "The total amount for the order"
+        data_tests:
+          - not_null
+      - name: status
+        description: "The status of the order"
+        data_tests:
+          - accepted_values:
+              values: ["pending", "shipped", "delivered", "canceled"]
+      - name: created_timestamp
+        description: "The timestamp when the order was created"
+      - name: updated_timestamp
+        description: "The timestamp when the order was last updated"
+      - name: is_active
+        description: "Indicates if the order is active"
       - name: processed_at
         description: "The timestamp when the record was processed"
