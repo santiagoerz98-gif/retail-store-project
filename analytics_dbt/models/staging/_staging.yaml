@@ -45,3 +45,112 @@ models:
         description: "Indicates if the customer is active"
       - name: processed_at
         description: "The timestamp when the record was processed"
+  - name: stg_employees
+    description: "Staging table for employees"
+    columns:
+      - name: employee_id
+        description: "The unique identifier for an employee"
+        data_tests:
+          - unique
+          - not_null
+      - name: store_id
+        description: "The identifier for the store the employee belongs to"
+      - name: first_name
+        description: "The first name of the employee"
+      - name: last_name
+        description: "The last name of the employee"
+      - name: email
+        description: "The email address of the employee"
+      - name: job_title
+        description: "The job title of the employee"
+      - name: salary
+        description: "The salary of the employee"
+      - name: created_timestamp
+        description: "The timestamp when the employee was created"
+      - name: updated_timestamp
+        description: "The timestamp when the employee was last updated"
+      - name: is_active
+        description: "Indicates if the employee is active"
+      - name: processed_at
+        description: "The timestamp when the record was processed"
+  - name: stg_order_items
+    description: "Staging table for order items"
+    columns:
+      - name: order_item_id
+        description: "The unique identifier for an order item"
+        data_tests:
+          - unique
+          - not_null
+      - name: order_id
+        description: "The identifier for the order"
+      - name: product_id
+        description: "The identifier for the product"
+      - name: quantity
+        description: "The quantity of the product in the order item"
+      - name: unit_price
+        description: "The unit price of the product in the order item"
+      - name: line_amount
+        description: "The total line amount for the order item"
+      - name: created_timestamp
+        description: "The timestamp when the order item was created"
+      - name: updated_timestamp
+        description: "The timestamp when the order item was last updated"
+      - name: is_active
+        description: "Indicates if the order item is active"
+      - name: processed_at
+        description: "The timestamp when the record was processed"
+  - name: stg_stores
+    description: "Staging table for stores"
+    columns:
+      - name: store_id
+        description: "The unique identifier for a store"
+        data_tests:
+          - unique
+          - not_null
+      - name: store_name
+        description: "The name of the store"
+      - name: city
+        description: "The city where the store is located"
+      - name: province
+        description: "The province where the store is located"
+      - name: country
+        description: "The country where the store is located"
+      - name: created_timestamp
+        description: "The timestamp when the store was created"
+      - name: updated_timestamp
+        description: "The timestamp when the store was last updated"
+      - name: is_active
+        description: "Indicates if the store is active"
+      - name: processed_at
+        description: "The timestamp when the record was processed"
+  - name: stg_orders
+    description: "Staging table for orders"
+    columns:
+      - name: order_id
+        description: "The unique identifier for an order"
+        data_tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "The identifier for the customer who placed the order"
+      - name: order_date
+        description: "The date when the order was placed"
+      - name: status
+        description: "The status of the order"
+      - name: total_amount
+        description: "The total amount for the order"
+        data_tests:
+          - not_null
+      - name: status
+        description: "The status of the order"
+        data_tests:
+          - accepted_values:
+              values: ["pending", "shipped", "delivered", "canceled"]
+      - name: created_timestamp
+        description: "The timestamp when the order was created"
+      - name: updated_timestamp
+        description: "The timestamp when the order was last updated"
+      - name: is_active
+        description: "Indicates if the order is active"
+      - name: processed_at
+        description: "The timestamp when the record was processed"
