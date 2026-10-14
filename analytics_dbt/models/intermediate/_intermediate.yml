@@ -1,0 +1,23 @@
+models:
+  - name: int_customers_agg
+    description: "Aggregated customer metrics for each customer based on their order history"
+    columns:
+      - name: customer_id
+        description: "Unique identifier for each customer"
+        data_test:
+          - unique
+          - not_null
+      - name: total_orders
+        description: "Total number of orders placed by the customer"
+      - name: lifetime_value
+        description: "Total monetary value of all orders placed by the customer"
+      - name: average_order_value
+        description: "Average monetary value of the customer's orders"
+      - name: max_order_value
+        description: "Maximum monetary value of a single order placed by the customer"
+      - name: min_order_value
+        description: "Minimum monetary value of a single order placed by the customer"
+      - name: last_order_date
+        description: "Date of the most recent order placed by the customer"
+      - name: first_order_date
+        description: "Date of the first order placed by the customer"
