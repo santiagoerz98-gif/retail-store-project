@@ -151,7 +151,7 @@ models:
         description: "The status of the order"
         data_tests:
           - accepted_values:
-              values: ["pending", "completed", "returned", "cancelled"]
+              values: ["Pending", "Completed", "Returned", "Cancelled"]
       - name: created_timestamp
         description: "The timestamp when the order was created"
       - name: updated_timestamp
