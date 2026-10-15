@@ -4,7 +4,7 @@ models:
     columns:
       - name: customer_id
         description: "Unique identifier for each customer"
-        data_test:
+        data_tests:
           - unique
           - not_null
       - name: total_orders
@@ -26,7 +26,7 @@ models:
     columns:
       - name: order_id
         description: "Unique identifier for each order"
-        data_test:
+        data_tests:
           - unique
           - not_null
       - name: customer_id

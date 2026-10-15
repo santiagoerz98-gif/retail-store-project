@@ -47,10 +47,10 @@ enriched_orders as (
         extract(hour from o.order_timestamp) as order_hour,
 
         -- status flags
-        case when o.order_status = 'completed' then 1 else 0 end as is_completed,
-        case when o.order_status = 'canceled' then 1 else 0 end as is_canceled,
-        case when o.order_status = 'pending' then 1 else 0 end as is_pending,
-        case when o.order_status = 'returned' then 1 else 0 end as is_returned,
+        case when o.order_status = 'Completed' then 1 else 0 end as is_completed,
+        case when o.order_status = 'Cancelled' then 1 else 0 end as is_canceled,
+        case when o.order_status = 'Pending' then 1 else 0 end as is_pending,
+        case when o.order_status = 'Returned' then 1 else 0 end as is_returned,
 
         -- financial metrics
         o.total_amount as order_gross_amount,
