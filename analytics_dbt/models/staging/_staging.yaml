@@ -37,6 +37,14 @@ models:
         description: "The last name of the customer"
       - name: email
         description: "The email address of the customer"
+      - name: phone
+        description: "The phone number of the customer"
+      - name: city
+        description: "The city of the customer"
+      - name: province
+        description: "The province of the customer"
+      - name: country
+        description: "The country of the customer"
       - name: created_timestamp
         description: "The timestamp when the customer was created"
       - name: updated_timestamp
@@ -143,7 +151,7 @@ models:
         description: "The status of the order"
         data_tests:
           - accepted_values:
-              values: ["pending", "completed", "returned", "cancelled"]
+              values: ["Pending", "Completed", "Returned", "Cancelled"]
       - name: created_timestamp
         description: "The timestamp when the order was created"
       - name: updated_timestamp

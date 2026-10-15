@@ -8,7 +8,7 @@ with source as (
         select * from {{ source('retail_store', 'customers') }}
   ),
   renamed as (
-      select
+      select distinct
           {{ adapter.quote("customer_id") }},
         {{ adapter.quote("first_name") }},
         {{ adapter.quote("last_name") }},
